@@ -35,7 +35,7 @@ class MusicLibraryController
       when "list artist"
         list_songs_by_artist
       when "list genre"
-        list_genre
+        list_songs_by_genre
       end
     end
   end
@@ -82,6 +82,16 @@ class MusicLibraryController
        puts "#{index + 1}. #{song.artist.name} - #{song.name}"
      end
    end
+
+   def play_song
+    puts "Which song number would you like to play?"
+    song_number = gets.chomp.to_i
+    if (1..Song.all.length).include?(song_number)
+      song = Song.all.sort {|a,b| a.name <=> b.name}[song_number - 1]
+      puts "Playing #{song.name} by #{song.artist.name}"
+    end
+  end
+end
 
 
 end
