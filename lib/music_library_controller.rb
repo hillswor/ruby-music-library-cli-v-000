@@ -58,7 +58,7 @@ class MusicLibraryController
 
   def list_genres
     lphabetical_genre_list = Genre.all.sort_by {|genre| genre.name}
-    alphabetical_genre_list.each_with_index do |artist, index|
+    alphabetical_genre_list.each_with_index do |genre, index|
       puts "#{index + 1}. #{artist.name}"
     end
   end
