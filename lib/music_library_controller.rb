@@ -68,8 +68,8 @@ class MusicLibraryController
     puts "Playing #{song.artist.name} - #{song.name} - #{song.genre.name}"
   end
 
-  def list_artist
-    specific_artist = gets
+  def list_songs_by_artist
+    requested_artist = gets
     puts Artist.find_by_name(specific_artist).songs.each {|song| puts "#{song.artist.name} - #{song.name} - #{song.genre.name}"}
   end
 
