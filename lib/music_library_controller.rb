@@ -63,11 +63,6 @@ class MusicLibraryController
     end
   end
 
-  def play_song
-    song = Song.all[gets.to_i - 1]
-    puts "Playing #{song.artist.name} - #{song.name} - #{song.genre.name}"
-  end
-
   def list_songs_by_artist
     user_input = gets
     requested_artist = Artist.find_by_name(user_input)
