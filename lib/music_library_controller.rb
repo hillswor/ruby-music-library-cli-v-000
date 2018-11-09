@@ -70,7 +70,7 @@ class MusicLibraryController
 
   def list_songs_by_artist
     requested_artist = gets
-    puts Artist.find_by_name(requested_artist).songs.each do |song|
+    Artist.find_by_name(requested_artist).songs
       puts "#{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
