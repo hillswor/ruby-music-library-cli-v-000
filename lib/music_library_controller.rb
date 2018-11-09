@@ -69,8 +69,11 @@ class MusicLibraryController
   end
 
   def list_songs_by_artist
-    requested_artist = gets
-    Artist.find_by_name(requested_artist).songs
+    user_input = gets
+    requested_artist = Artist.find_by_name(user_input)
+    requested_artist.each_with_index do |song, index|
+      puts "#{index + 1}. #{song.name} - #{song.genre}"
+    end
   end
 
    def list_genre
